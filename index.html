@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PerformanceLab</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="https://w7.pngwing.com/pngs/285/461/png-transparent-bmw-m-car-bmw-5-series-logo-bmw-emblem-trademark-logo-thumbnail.png">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <img src="https://www.carlogos.org/logo/BMW-M-logo-1920x1080.png" alt="Логотип">
+      <span>PerformanceLab</span>
+    </div>
+    <div id="about">
+      <a href="#" title="Услуги" onclick="slowScroll('#main')">Услуги</a>
+      <a href="#" onclick="slowScroll('#pros')" title="Наши преимущества">Наши преимущества</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Записаться">Записаться в сервис</a>
+      <a title="Телефон">8-800-555-35-35</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>Мы не продаём автомобили BMW</h1>
+    <h2>Но мы их профессионально ремонтируем!</h2>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>Мы оказываем широкий спектр услуг:</h2>
+      
+    </div>
+    <div class="text">
+      <span>Компьютерная диагностика, кузовной ремонт, техническое обслуживание, шиномонтаж, заправка кондиционера, услуги детейлинга, дооснащение</span>
+    </div>
+  </div>
+
+  <div id="pros">
+    <h2>Преимущества</h2>
+
+    <div class="img">
+      <img src="https://img.freepik.com/premium-photo/wipes-vehicle-that-is-white-soap-modern-black-automobile-get-cleaned-by-woman-inside-car-wash-station_146671-44050.jpg" alt="Мойка авто">
+      <span>Бережная мойка кузова перед выполнением работ с автомобилем</span>
+    </div>
+    <div class="img">
+      <img src="https://pictures.dealer.com/b/bmwoflouisevillebmw/0090/a2c0f470c97c34a1145f45fd3c7b7c68x.jpg?impolicy=downsize&w=568" alt="Сервис">
+      <span>Профессиональное оборудование и квалифицированные специалисты</span>
+    </div>
+  </div>
+
+  <div id="contacts">
+    <center><h5>Оставьте свои контакты, чтобы наш менеджер связался с вами</h5></center>
+    <form id="form_input">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Ваша почта <span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Интересующая услуга<span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
